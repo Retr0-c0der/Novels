@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mech Touch</title> <!-- Moved this line to the <head> section -->
+    <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        fetch('merged.txt')
+            .then(response => response.text())
+            .then(text => {
+                const textContainer = document.getElementById('text-container');
+                textContainer.textContent = text;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+    </script>
+</head>
+<body>
+    <pre id="text-container"></pre>
+</body>
+</html>
